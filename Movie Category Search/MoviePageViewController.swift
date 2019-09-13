@@ -22,27 +22,11 @@ class MoviePageViewController: UIViewController {
     lazy var commentsLabel = UILabel()
     
     lazy var tableViewComments = UITableView()
-    
-    lazy var scrollView: UIScrollView = {
-        let view = UIScrollView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.contentSize.height = 2000
-        //view.backgroundColor = UIColor(patternImage: UIImage(named: "background.jpg")!)
-        return view
-    }()
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // set background
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.jpg")!)
-        
-//        self.view.addSubview(self.scrollView)
-//        scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-//        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-//        scrollView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-//        scrollView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         
         // set picture of the movie
         self.movieImageView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height / 2)
@@ -78,27 +62,10 @@ class MoviePageViewController: UIViewController {
         aboutMovie.isScrollEnabled = false
         self.view.addSubview(self.aboutMovie)
         
-        // set back button
-        self.backButton = UIButton(type: .roundedRect)
-        self.backButton.frame = CGRect(x: 20, y: 50, width: 80, height: 50)
-        self.backButton.setTitle("Back", for: .normal)
-        self.backButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        self.backButton.layer.cornerRadius = 10
-        self.backButton.backgroundColor = UIColor.white
-        self.backButton.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
-        self.view.addSubview(self.backButton)
-        
-//        // set comments label
-//        self.commentsLabel.frame = CGRect(x: 0, y: self.view.frame.height/2 + 120 + newSize.height, width: self.view.frame.width, height: 30)
-//        self.commentsLabel.text = "Comments"
-//        self.commentsLabel.backgroundColor = UIColor.white
-//        self.commentsLabel.font = UIFont.boldSystemFont(ofSize: 24)
-//        scrollView.addSubview(self.commentsLabel)
-        
         // set comments table
         self.commentsButton = UIButton(type: .roundedRect)
         self.commentsButton.frame = CGRect(x: 0, y: self.view.frame.height/2 + 120 + newSize.height , width: self.view.frame.width, height: self.view.frame.height/2 - 120 - newSize.height)
-        self.commentsButton.setTitle("Comments", for: .normal)
+        self.commentsButton.setTitle("User Reviews", for: .normal)
         self.commentsButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         self.commentsButton.backgroundColor = UIColor.white
         self.commentsButton.addTarget(self, action: #selector(commentsButtonPressed), for: .touchUpInside)
@@ -106,25 +73,14 @@ class MoviePageViewController: UIViewController {
         
     }
     
-    // behavior when Back is pressed
-    @objc func backButtonPressed(_ sender: Any){
-        // get the array of the curren controllers
-        var currentControllerArray = self.navigationController?.viewControllers
-        
-        // delete the last one
-        currentControllerArray?.removeLast()
-        
-        // set the previous controller as the present one
-        if let newController = currentControllerArray{
-            self.navigationController?.viewControllers = newController
-        }
-    }
     @objc func commentsButtonPressed(_ sender: Any) {
-        //let commentsVC = CommentsViewController()
-        //self.navigationController?.pushViewController(commentsVC, animated: true)
+        let commentsVC = CommentsTableViewController()
+        self.navigationController?.pushViewController(commentsVC, animated: true)
+        
+        commentsVC.movieID = movieID
+        commentsVC.aboutMovie = aboutMovie
     }
 
-    
     func UIColorFromRGB(rgbValue: UInt) -> UIColor {
         return UIColor(
             red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,

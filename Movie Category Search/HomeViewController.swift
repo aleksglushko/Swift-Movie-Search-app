@@ -11,11 +11,9 @@ import AFNetworking
 
 class HomeViewController: UIViewController, UISearchBarDelegate {
     
-    let searchBar = UISearchBar()
-    
+    var searchBar = UISearchBar()
     var logoutButton = UIButton()
     var tableView = UITableView()
-    
     var movies: [NSDictionary]?
     
     var moviesIdsGenres = [28: "Action", 12: "Adventure", 16: "Animation", 35: "Comedy", 80: "Crime", 99: "Documentary", 18: "Drama", 10751: "Family", 14: "Fantasy", 36: "History", 27: "Horror", 10402: "Music", 9648: "Mystery", 10749: "Romance", 878: "Science Fiction", 10770: "TV Movie", 53: "Thriller", 10752: "War", 37: "Western"]
@@ -30,27 +28,19 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
         
         // set background
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.jpg")!)
-        
-        // Set Logout Button
-        self.logoutButton = UIButton(type: .roundedRect)
-        self.logoutButton.frame = CGRect(x: 20, y: 60, width: 80, height: 50)
-        self.logoutButton.setTitle("Log Out", for: .normal)
-        self.logoutButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        self.logoutButton.layer.cornerRadius = 10
-        self.logoutButton.backgroundColor = UIColor.white
-        self.logoutButton.addTarget(self, action: #selector(logoutPressed), for: .touchUpInside)
-        self.view.addSubview(self.logoutButton)
-        
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+
         // set searchbar
-        self.searchBar.frame = CGRect(x: 115, y: 60, width: self.view.frame.width - 115, height: 50)
+        self.searchBar.frame = CGRect(x: 130, y: 60, width: self.view.frame.width - 130, height: 50)
         self.searchBar.placeholder = " Search..."
-        self.searchBar.layer.cornerRadius = 10
+        self.searchBar.layer.cornerRadius = 4
         self.searchBar.backgroundColor = UIColor.clear
         self.searchBar.delegate = self
-        self.view.addSubview(self.searchBar)
+        let rightNavBarButton = UIBarButtonItem(customView: searchBar)
+        self.navigationItem.rightBarButtonItem = rightNavBarButton
         
         // set table view
-        self.tableView.frame = CGRect(x: 0, y: 120, width: self.view.frame.width, height: self.view.frame.height-120)
+        self.tableView.frame = CGRect(x: 0, y: 60, width: self.view.frame.width, height: self.view.frame.height)
         self.tableView.backgroundColor = UIColor.white
         // self.tableView.separatorColor = UIColor.clear
         self.tableView.delegate = self
@@ -60,23 +50,6 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
         self.tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "Cell")
         
         }
-    
-    // behavior when logout is pressed
-    @objc func logoutPressed(_ sender: Any){
-        // get the array of the curren controllers
-        var currentControllerArray = self.navigationController?.viewControllers
-        
-        // delete the last one
-        currentControllerArray?.removeLast()
-        
-        // set the previous controller as the present one
-        if let newController = currentControllerArray{
-            self.navigationController?.viewControllers = [newController[0]] // to LoginPage
-        }
-    }
-    
-    // override segue
-    
     
     // translate ids to genres
     func idsToGenres(ids: [Int]) -> String{
@@ -220,6 +193,5 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         self.navigationController?.pushViewController(movieVC, animated: true)
         
         
-    }
-    
+    }    
 }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		24A2AA692329A75800A7E908 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A2AA682329A75800A7E908 /* CustomTableViewCell.swift */; };
+		24A2AAB1232A980300A7E908 /* CommentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A2AAB0232A980300A7E908 /* CommentsTableViewController.swift */; };
+		24A2AAB5232A98DC00A7E908 /* OverviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A2AAB4232A98DC00A7E908 /* OverviewCell.swift */; };
 		24BCC50E232290C700D3666C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BCC50D232290C700D3666C /* AppDelegate.swift */; };
 		24BCC513232290C700D3666C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24BCC511232290C700D3666C /* Main.storyboard */; };
 		24BCC515232290C700D3666C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24BCC514232290C700D3666C /* Assets.xcassets */; };
@@ -45,6 +47,8 @@
 		1BF62836EBFC44EAC0FC85F2 /* Pods-Movie Category SearchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movie Category SearchUITests.release.xcconfig"; path = "Target Support Files/Pods-Movie Category SearchUITests/Pods-Movie Category SearchUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1D93171A815C60720A835FE3 /* Pods-Movie Category SearchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movie Category SearchTests.release.xcconfig"; path = "Target Support Files/Pods-Movie Category SearchTests/Pods-Movie Category SearchTests.release.xcconfig"; sourceTree = "<group>"; };
 		24A2AA682329A75800A7E908 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		24A2AAB0232A980300A7E908 /* CommentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewController.swift; sourceTree = "<group>"; };
+		24A2AAB4232A98DC00A7E908 /* OverviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewCell.swift; sourceTree = "<group>"; };
 		24BCC50A232290C700D3666C /* Movie Category Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie Category Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		24BCC50D232290C700D3666C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24BCC512232290C700D3666C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 				24BCC53B232290DD00D3666C /* LoginViewController.swift */,
 				24BCC53D232290ED00D3666C /* HomeViewController.swift */,
 				24BCC5B92326EE0F00D3666C /* MoviePageViewController.swift */,
+				24A2AAB0232A980300A7E908 /* CommentsTableViewController.swift */,
+				24A2AAB4232A98DC00A7E908 /* OverviewCell.swift */,
 				24A2AA682329A75800A7E908 /* CustomTableViewCell.swift */,
 				24BCC511232290C700D3666C /* Main.storyboard */,
 				24BCC514232290C700D3666C /* Assets.xcassets */,
@@ -399,7 +405,9 @@
 				24BCC53C232290DD00D3666C /* LoginViewController.swift in Sources */,
 				24BCC50E232290C700D3666C /* AppDelegate.swift in Sources */,
 				24BCC53E232290ED00D3666C /* HomeViewController.swift in Sources */,
+				24A2AAB5232A98DC00A7E908 /* OverviewCell.swift in Sources */,
 				24BCC5BA2326EE0F00D3666C /* MoviePageViewController.swift in Sources */,
+				24A2AAB1232A980300A7E908 /* CommentsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

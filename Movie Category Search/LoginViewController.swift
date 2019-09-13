@@ -51,7 +51,7 @@ class LoginViewController: UIViewController {
         self.loginButton.center = CGPoint(x: 205, y: 485)
         self.loginButton.setTitle("Login", for: .normal)
         self.loginButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        self.loginButton.layer.cornerRadius = 10
+        self.loginButton.layer.cornerRadius = 8
         self.loginButton.backgroundColor = UIColor.white
         self.loginButton.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
         self.view.addSubview(self.loginButton)
@@ -70,7 +70,7 @@ class LoginViewController: UIViewController {
         if (password == "" && username == ""){
             // if fields are empty
             self.buttonPressed(title: "", message: "Credentials Required", style: .alert)
-        } else if (password != "admin" && username != "admin"){
+        } else if (username != "admin" && password != "admin"){
             // if credentials are wrong
             self.buttonPressed(title: "", message: "Wrong Credentials", style: .alert)
         } else {
