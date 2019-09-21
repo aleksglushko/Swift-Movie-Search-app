@@ -5,18 +5,10 @@ A small application for searching movies from IMDB. One get a brief description 
 ## Application UI
 
 <p align="center">
-  <img src="UI/LoginPage.png" width="350" title="hover text">
+  <img src="UI/LoginPage.png" width="250" title="Login Page">
+  <img src="UI/HomePage.png" width="250" title="Home Page">
+  <img src="UI/HomePage2.png" width="250" title="Home Page">
+  <img src="UI/MoviePage.png" width="250" title="Movie Page">
+  <img src="UI/OverviewsPage.png" width="250" title="Overviews Page">
 </p>
-
-![Login page](https://github.com/spaceiling/Swift-Movie-Search-app/blob/xcode_branch/UI/LoginPage.png)
-
-![Home page](https://github.com/spaceiling/Swift-Movie-Search-app/blob/xcode_branch/UI/HomePage.png)
-
-![Home page2](https://github.com/spaceiling/Swift-Movie-Search-app/blob/xcode_branch/UI/HomePage2.png)
-
-![Movie page](https://github.com/spaceiling/Swift-Movie-Search-app/blob/xcode_branch/UI/MoviePage.png)
-
-![Reviews page](https://github.com/spaceiling/Swift-Movie-Search-app/blob/xcode_branch/UI/OverviewsPage.png)
-
-
 
