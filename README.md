@@ -4,6 +4,10 @@ A small application for searching movies from IMDB. One get a brief description 
 
 ## Application UI
 
+<p align="center">
+  <img src="UI/LoginPage.png" width="350" title="hover text">
+</p>
+
 ![Login page](https://github.com/spaceiling/Swift-Movie-Search-app/blob/xcode_branch/UI/LoginPage.png)
 
 ![Home page](https://github.com/spaceiling/Swift-Movie-Search-app/blob/xcode_branch/UI/HomePage.png)
